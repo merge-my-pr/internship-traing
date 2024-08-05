@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>arrays</title>
+
+    <script>
+
+        let arr=[1,2,3,4]
+        // document.write(arr)
+
+        
+        let displayarr=()=>{
+
+            let res=document.getElementById("res")
+
+            // res.innerText=arr[0]
+            // res.innerText=arr[1]
+            // res.innerText=arr[2]
+            // res.innerText=arr[3]
+            res.innerText=arr
+
+            // for(let i=0;i<arr.length;i++)
+            // {   
+            // }
+            // for(let item: arr){
+            //     console.log(item)
+            // }
+            
+            // arr.forEach(item => console.log(item))
+
+
+
+        }
+        function displaytable()
+        {
+            //accesing div1 HTML element by ID
+            let div1=document.getElementById("t1")
+
+            // initail declaration of table
+            let res="<table border='1'><tr><th>arr</th></tr>"
+
+
+            arr.forEach(item => {
+                res+= "<tr><td>"+item+"</td></tr>"
+            })
+
+            res+="</table>"
+
+            div1.innerHTML=res
+
+            // div1.innerHTML="<table><tr><th>sno</th></tr><tr><td>1</td></tr></table>"
+        }
+
+        function getfactorial()
+        {
+            let num=document.getElementById("num").value*1
+            let res="<table border='1'><tr><th>numbers</th><th>factorial result</th></tr>"   
+
+            let factres=document.getElementById("factresult")
+            
+
+            for(let i=0;i<num;i++)
+            {
+                let fact=1;
+                for(let j=1;j<=i;j++)
+                {
+                    fact=fact*j;
+                }
+                res+="<tr> <td>"+i+"</td><td>"+fact+"</td></tr>"
+                
+            }
+
+            res+="</table>"
+            factres.innerHTML=res
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+    
+    <p id="res"></p>
+    <button onclick="displayarr()">print array</button>
+
+    <button onclick="displaytable()">display table</button>
+
+    <div id="t1"></div>
+
+    <input type="number" id="num"> 
+    <button onclick="getfactorial()">get factorial</button>
+   
+    <div id="factresult"></div>
+
+</body>
+</html>

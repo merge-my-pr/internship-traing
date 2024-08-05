@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>this is title</title>
+
+    <!-- external styling -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- internal javascript  -->
+    <script>
+        // three ways to declare variable in javascript (let,var,const)
+
+        // document.getElementById
+        // document.getElementsByName
+        // document.getElementsByTagName
+
+        document.write("this is document write predefined method ")
+
+        // normal function
+        function printhello()
+        {
+            var name = document.getElementById("name").value;
+            console.log("arrow function");
+            // alert(name)
+        }
+
+        // arrow function 
+        // let arrowfunction= ()=>{
+            
+        // }
+
+        // parseint 
+
+        function addnumber()
+        {
+              let num1=document.getElementById("firstnumber").value*1;
+              let num2=document.getElementById("secondnumber").value*1;
+              let result=num1+num2;
+              
+              let res=document.getElementById("res");
+              res.innerText=result;
+        }
+
+        function displayname()
+        {
+                let username=document.getElementById("name").value;
+                let res=document.getElementById("res")
+                res.innerText=username
+        }
+
+        function convertuppercase()
+        {
+            let username=document.getElementById("name").value;
+            let res=document.getElementById("res")
+            res.innerText=username.toUpperCase()
+        }
+
+            function concatstrings()
+            {
+                let username1=document.getElementById("name1").value;
+                let username2=document.getElementById("name2").value;
+                let res=document.getElementById("res")
+                res.innerText=username1+"-"+username2
+            }
+
+            function getlength()
+            {
+                let username1=document.getElementById("name1").value;
+                let res=document.getElementById("res")
+                res.innerText=username1.length
+
+            }
+
+            function changetoblack()
+            {
+                document.bgColor="black"
+            }
+
+            function changetored()
+            {
+                document.bgColor="red"
+            }
+            function changetowhite()
+            {
+                document.bgColor="white"
+            }
+            function changetopink()
+            {
+                document.bgColor="pink"
+            }
+
+            function changetocolor(color)
+            {
+                document.bgColor=color
+            }
+
+            function comparestrings()
+            {
+                let str1=document.getElementById("str1").value
+                let str2=document.getElementById("str2").value
+                let res=document.getElementById("resultofstring")
+
+                
+                // if (str1==str2) {
+                //     res.innerText="strings are same"
+                // }
+                // else{
+                //     res.innerText="strings are not same"
+                // }
+                // res.innerText= str1==str2?"same":"not same"
+                res.innerText=str1.endsWith(str2)
+
+
+            }
+
+            
+
+    </script>
+
+    </head>
+<body>
+    <!-- onload="alert('welcome to webpage')"" -->
+     <br>
+    <label for="name">Name</label>
+    <input type="text" id="name1" placeholder="enter your name1"> 
+    <input type="text" id="name2" placeholder="enter your name2"> 
+
+    <button onclick="displayname()">display name</button>
+    <button onclick="convertuppercase()">convert to uppercase</button>
+    <button onclick="concatstrings()">concat</button>
+    <button onclick="getlength()">get length</button>
+    <br>
+    <br>
+    <input type="number" id="firstnumber"  placeholder="enter first number">
+    <input type="number" id="secondnumber" placeholder="enter seconds number">
+    <br>
+    <!-- event handlers -->
+
+    <button onclick="addnumber()">add</button>
+
+    <h1 id="res"></h1>
+
+    <button onclick="changetocolor('black')">black</button>
+    <button onclick="changetocolor('red')" >red</button>
+    <button onclick="changetocolor('white')">white</button>
+    <button onclick="changetocolor('pink')" >pink</button>
+
+    <hr>
+
+    <input type="text" placeholder="string1" id="str1">
+    <input type="text" placeholder="string2" id="str2">
+    <button onclick="comparestrings()">check</button>
+    <p id="resultofstring"></p>
+</body>
+</html>

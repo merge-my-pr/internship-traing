@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>file handling</title>
+
+    <script>
+        function displaydata()
+        {
+
+            let datadiv=document.getElementById("dataresult")
+            let res="<table border='1'><tr><th>id</th><th>name</th><th>age</th></tr>"
+            fetch("textfile.json")
+            .then(data => data.json())
+            .then(result => datadiv.innerHTML="<tr><td>"+result.id+"</td><td>"+result.name+"</td><td>"+result.age+"</td></tr></table>")
+            
+        }
+    </script>
+</head>
+<body>
+    <div id="dataresult"></div>
+    <button onclick="displaydata()">display text</button>
+</body>
+</html>
