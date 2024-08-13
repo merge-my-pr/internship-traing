@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+    <!-- https://socket.io/docs/v4/client-installation/ -->
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <input type="text" id="message">
+    <input type="submit" id="sendmessage"> 
+  
+
+    <div id="messages">
+       
+ 
+    </div>
+
+    <script>
+        const socket=io();
+
+        let message=document.getElementById('message');
+        let b1=document.getElementById('sendmessage');
+        let messages=document.getElementById('messages');
+
+        b1.addEventListener('click',()=>{
+                socket.emit('chat message',message.value);
+                message.value=''
+        })
+        
+        socket.on('chat message',(msg)=>{
+        let item=document.createElement('li');
+        item.textContent=msg;
+        messages.appendChild(item)
+        
+    })
+
+
+    </script>
+</body>
+</html>
